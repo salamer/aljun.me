@@ -6,7 +6,7 @@ from ..models import User,Post,Category,Like
 from .forms import SearchForm,PostForm,LoginForm,EditForm
 from flask.ext.login import login_user,logout_user,login_required
 
-PER_POSTS_PER_PAGE=4
+PER_POSTS_PER_PAGE=8
 
 
 @main.route('/',methods=['GET',"POST"])
@@ -27,7 +27,7 @@ def index():
 	pagination=Post.query.order_by(Post.timestamp.desc()).paginate(
 		page,per_page=PER_POSTS_PER_PAGE,error_out=False)
 	posts=pagination.items
-	categorys=Category.query.all()
+	categorys=Category.query.order_by(Category.count)[::-1]
 
 
 	return render_template('index.html',posts=posts,pagination=pagination,categorys=categorys)
@@ -122,4 +122,10 @@ def like():
 	like.like_count=int(like.like_count)+1
 	db.session.add(like)
 	db.session.commit()
-	return jsonify(like.like_count)
+	liked=like.like_count
+	return jsonify({"liked":liked})
+
+
+@main.app_errorhandler(404)
+def page_not_found(error):
+	return render_template("404.html"),404

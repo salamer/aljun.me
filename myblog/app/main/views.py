@@ -48,7 +48,7 @@ def post(index):
 	post=Post.query.get_or_404(index)
 	return render_template("post.html",post=post)
 
-@main.route('/gagawrite',methods=['GET','POST'])
+@main.route('/write',methods=['GET','POST'])
 def write():
 	form=PostForm()
 	the_category=Category.query.all()
@@ -101,7 +101,7 @@ def about_website():
  #       flash('invalid usernamen or password')
 #    return render_template('login.html',form=form)
 
-@main.route('/gagaedit/<int:index>',methods=['GET','POST'])
+@main.route('/edit/<int:index>',methods=['GET','POST'])
 def edit(index):
 	post=Post.query.get_or_404(index)
 	form=EditForm()
