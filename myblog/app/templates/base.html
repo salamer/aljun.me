@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %} | GAGASALAMER</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='dist/css/flat-ui.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='mystyle.css') }}">
+
+	<link rel="shortcut icon" href="{{ url_for('static',filename='gagasalamer.ico') }}">
+
+	<script type="text/javascript" src="{{ url_for('static',filename='dist/js/vendor/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+
+	<script type="text/javascript" src="{{ url_for('static',filename='mystyle.js') }}"></script>
+<style type="text/css">
+	h1{
+		font-size:50px;
+	}
+	h2{
+		font-size: 40px;
+	}
+	h3{
+		font-size: 30px;
+	}
+	p{
+		font-size: 15px;
+	}
+	blockquote p{
+		font-size: 17px;
+	}
+	body{
+		font-size: 15px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<body style="background-color:#EEE">
+	<nav class="navbar navbar-default navbar-Amethyst" role="navigation" style="margin:10px 0px;">
+	<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="/">GAGASALAMER</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+
+    <ul class="nav navbar-nav">
+    	<li>
+    	
+    </li>
+      <li class="active"><a href="/">MYBLOG</a></li>
+      <li><a href="/about">ABOUTME</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+    	<li id="signin_icon"><a href="#">SIGNIN</a></li>
+    	
+    	
+
+        </ul>
+  </div><!-- /.navbar-collapse -->
+  </div>
+</nav><!-- /navbar -->
+{% block body%}
+{% endblock %}
+
+
+
+
+<div class="signin" style="height:900px;width:400px;position:fixed;top:25%;left:40%;display:none" id="vzinv_signin">
+	<div class="panel panel-success">
+		<div class="panel-heading">SIGN IN<div style="right:18px;top:18px;position:absolute" id="signup_close"><span class="glyphicon glyphicon-remove" aria-hidden="true" id="signin_close" style="cursor:pointer"></span></div></div>
+		<div class="panel-body">
+			<div class="login-form">
+            <div class="control-group">
+              <input type="text" class="form-control" value="" placeholder="Enter your name" id="login-name" />
+              <label class="login-field-icon fui-man-16" for="login-name"></label>
+            </div>
+
+            <div class="control-group">
+              <input type="password" class="form-control" value="" placeholder="Password" id="login-pass" />
+              <label class="login-field-icon fui-lock-16" for="login-pass"></label>
+            </div>
+            <label class="checkbox">
+            	<span class="icon"></span>
+            	<span class="icon-to-fade"></span>
+            	<input type="checkbox">keep alive.
+            </label>
+
+            <a class="btn btn-primary btn-large btn-block" href="#">Login</a>
+
+          </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<div style="background:#384452 none repeat scroll 0% 0%;color:#BFC9D3">
+	<div class="container">
+		<div class="row" style="padding-top:30px;">
+			<div class="col-md-7">
+				<p class="lead"> Designed and built with all the love in the world by the Mr.<a href="/">ALJUN</a>.</p>
+				<p >@SERVER BY <strong>NGINX</strong> AND POWER BY <strong>DIGITALOCEAN</strong>.</p>
+				
+			</div>
+			<div class="col-md-5">
+				<div>
+					<h5 style="margin-bottom:15px;margin-left:18px;"><strong>CONTACT ME</strong></h5>
+					<ul>
+						<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp WECHAT</a></li>
+						<li><a href="http://weibo.com/2277966967/profile"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> &nbsp WEIBO</li>
+						<li><a href="https://github.com/salamer"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>&nbsp GITHUB</a></li>
+						<li><a href="#"><span class=" glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp EMAIL:<strong>contactsalamer@163.com</strong></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<p> <small>© COPYRIGHT BY GAGASALAMER 2015</small></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

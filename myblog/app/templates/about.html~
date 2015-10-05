@@ -1,0 +1,158 @@
+{% extends  "base.html" %}
+
+{% block title %}
+关于网站
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<article class="article the-font">
+			<div class="comtainer">
+				<div class="row">
+					<div class="col-md-3">
+						<br>
+
+						<div align="center"><img src="http://7xlen8.com1.z0.glb.clouddn.com/avatar.jpg" style="height:220px;width:220px;border-radius:110px;display:block;text-align:center" align="center"></div>
+						<br>
+						<p class="lead text-center">ALJUN</p>
+						<p class="text-center"><em><span style="color:#ABAAAA">ONE MAN CAN CHANGE THE WORLD!	</span></em></p>
+						<br>
+
+
+						<p class="palette-paragraph"><strong>这个是我的个人网站，如果你喜欢，那就按下下面的"LIKE”按钮，给我动力继续写吧</strong></p>
+						<div  style="cursor:pointer" class="btn btn-danger btn-large btn-block btn-like-add">LIKE <span class="glyphicon glyphicon-heart" aria-hidden="True"></span></div>
+						<hr>
+						<p >已经有了这么多<strong>LIKE</strong>:<a href="#"><span id="liked">{{ liked.like_count }}</span></a></p>
+					</div>
+					<div class="col-md-9">
+						<h3>个人信息：</h3>
+						<hr>
+						<ul>
+							<li>姓名：陈阳洋</li>
+							<li>网名：Aljun（或者Salamer）</li>
+							<li>年龄：19</li>
+							<li>生日：1996/2/19</li>
+							<li>居住地：北京</li>
+							<li>学历：本科大二应用化学在读</li>
+							
+						</ul>
+						<h3>联系方式：</h3>
+						<hr>
+						<ul>
+							<li>EMAIL:<a href="#">contactsalamer@163.com</a></li>
+							<li>WEIBO:<a href="http://weibo.com/2277966967/profile">陈阳洋invictus的微博_微博</a></li>
+							<li>QQ:3028156088</li>
+						</ul>
+						<h3>个人代码库：</h3>
+						<hr>
+						<ul>
+							<li>GITHUB:<a href="https://github.com/salamer">https://github.com/salamer</a></li>
+							<li>该网站源代码：<a href="https://github.com/salamer/GAGASALAMER_BLOG">https://github.com/salamer/GAGASALAMER</a></li>
+						</ul>
+						<h3>已学过的：</h3>
+						<hr>
+						<ul>
+							<li>能够使用django，flask，tornado框架（该网站就是基于flask编写的）</li>
+							<li>sql</li>
+							<li>c,c++（做项目，码算法，看底层）</li>
+							<li>python的爬虫编写</li>
+							<li>使用ruby的ruby on rails框架</li>
+							<li>bootstrap，pure等前端相应式布局</li>
+							<li>jquery,angularjs</li>
+							<li>nodejs</li>
+						</ul>
+						<h3>发展方向：</h3>
+						<hr>
+						<ul>
+							<li>算法与数据结构学习（ACM）</li>
+							<li>机器学习</li>
+							<li>数据挖掘</li>
+							<li>计算机图像处理</li>
+						</ul>
+						<h3>其他兴趣：</h3>
+						<hr>
+						<ul>
+							<li>语言：英语，日语</li>
+							<li>历史迷，特别二战史，欧洲史，罗马史，日本战国史</li>
+							<li>对社会科学也有些想象</li>
+						</ul>
+						
+						<h3>格言：</h3>
+						<hr>
+						<blockquote>
+							<p></p>
+							<p>也许多少年后在某个地方，</p>
+							<p>我将轻声叹息将往事回顾：</p>
+							<p>一片树林里分出两条路——</p>
+							<p>而我选择了人迹更少的一条，</p>
+							<p>从此决定了我一生的道路。</p>
+							<p class="text-right"><em>——Robert Frost 《The Road Not Taken》</em></p>
+						</blockquote>
+						<hr>
+						<p >我想感谢 <strong>BIG SEAN,KANYE WEST</strong><strong>和 JUSTING BIEBER </strong>，感谢他们的歌曲陪伴了我走过一个个敲键盘的夜晚。</p>
+						<img src="http://7xlen8.com1.z0.glb.clouddn.com/kanye3.jpg" >
+						<hr>
+						<p class="lead">这是我的个人网站，如果你觉得它很有趣，或者内容对你很有帮助，可以qq联系我，请我喝杯茶。</p>
+						<hr>
+					</div>
+					<hr>
+					<br>	
+					<br>
+
+					</div>
+					
+				</div>
+			
+		</article>
+			
+			
+			<article class="article">
+						<div class="ds-share flat" data-thread-key="999" data-title="关于GAGASALAMER" data-images="http://7xlen8.com1.z0.glb.clouddn.com/avatar.jpg" data-content="关于GAGASALAMER的网站" data-url="/about">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      	
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+			<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="aboutMe" data-title="MyInfomation" data-url="/about"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gagablog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+		
+  	
+  	</article>
+  	<article>
+  		
+  	</article>
+  	</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

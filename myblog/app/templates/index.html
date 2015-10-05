@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+GAGASALAMER
+{% endblock %}
+
+{% block body %}
+{% import "_macros.html" as macro %}
+
+	
+	<nav class="navbar navbar-default navbar-lg navbar-Amethyst" role="navigation" style="display:none">
+	<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="#">GAGASALAMER</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+
+    <ul class="nav navbar-nav">
+    	<li>
+    	
+    </li>
+      <li class="active"><a href="#fakelink">MYBLOG</a></li>
+      <li><a href="#fakelink">ABOUTME</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+    	<li id="signup_icon"><a href="#">SIGNUP</a></li>
+    	
+    	
+
+        </ul>
+  </div><!-- /.navbar-collapse -->
+  </div>
+</nav><!-- /navbar -->
+
+<div class="jumbotron" style="background-color:#2c3e50">
+	<div class="container">
+		<h2 style="color:#E7DBDB">Hello, I am Aljun!</h2>
+		<p class="lead" style="color:#E7DBDB">wanna know more , please click </p>
+            <a href="about"><button class="btn btn-danger btn-wide the-font">关于我</button></a>
+	</div>
+</div>
+
+<div class="container">
+<div class="row">
+
+	<div class="col-md-9">
+
+	{% for post in posts %}
+		<article class="article the-font" style="display:none">
+
+
+			<a href="/post/{{ post.id }}"><h3 style="color:#34495E">{{ post.title }}</h3></a>
+			<p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small></p>
+			<div class="post-alert">本博客采用创作共用版权协议, 要求署名、非商业用途和保持一致. 转载本博客文章必须也遵循署名-非商业用途-保持一致的创作共用协议</div>
+			<p>{{ post.summury_html|safe }}</p>
+			
+			<div style="border-top:1px solid #EBEBEB;padding:10px 5px;margin-top:20px;">
+				<p><a href="/category/{{ post.category.tag }}"><span class="label label-default text-left"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> {{ post.category.tag }}</span>
+				<a href="/post/{{ post.id }}" style="float:right"><button class="btn  btn-primary btn-wide text-right"><span class="glyphicon glyphicon-fire
+glyphicon " aria-hidden="true"></span>  了解更多</button></a></p>
+			</div>
+		</article>
+	{% endfor %}
+	{% if pagination %}
+	{{ macro.pagination_widget(pagination,'.index') }}	
+      	{% endif %}
+	</div>
+
+	<div class="col-md-3">
+	
+		<div class="share mrl the-font" style="background-color:#FFF;box-shadow:5px 5px 20px #CCC;width:260px;">
+		<div style="padding:10px;">
+				<div style="border-bottom:1px solid #DAD4D4;;padding:10px 10px;">
+					<h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>
+				</div>
+
+				<ul>
+					{% for category in categorys %}
+					<li class="presentation" style="padding-top:0px;"><a href="/category/{{ category.tag }}" ><p><span style="font-size:15px;">> {{ category.tag|upper }}</span><span class="badge text-right" style="float:right">{{ category.count }}</span></p></a></li>
+					{% endfor %}
+				</ul>
+
+		</div>
+		</div>
+		
+<!--		<div class="tile" style="margin-top:40px;box-shadow:5px 5px 20px #CCC;background-color:#FFF">
+			<div style="border:5px solid #FFF;border-radius:300px;width:128px;height:128px;margin:0px auto;position:relative;bakeground:#88ACDB none repeat scroll 0% 0%;overflow:hidden">
+				<img src="{{ url_for('static',filename='pic/123.jpg') }}" style="width:100%;height:100%">
+			</div>
+		</div>
+-->	
+	</div>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

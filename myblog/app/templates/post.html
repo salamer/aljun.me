@@ -1,0 +1,71 @@
+{% extends  "base.html" %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<article class="article the-font">
+			<h2>{{ post.title }}</h2>
+			<p><small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><span style="color:#8C8C8C;">{{ post.timestamp }}</span></small></p>
+			<div class="post-alert">本博客采用创作共用版权协议, 要求署名、非商业用途和保持一致. 转载本博客文章必须也遵循署名-非商业用途-保持一致的创作共用协议</div>
+			
+			<p>{{ post.body|safe|markdown }}</p>
+			
+			
+			<div style="border-top:1px solid #EBEBEB;padding:10px 5px;margin-top:20px;">
+				<a href="/category/{{ post.category.tag }}"><span class="label label-default"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> {{ post.category.tag }}</span></a>
+				<a href="/" class="btn btn-xs " style="float:right">返回首页<span class=" glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+			</div>
+		</article>
+		<article class="article the-font">
+			<div class="ds-share flat" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-images="http://7xlen8.com1.z0.glb.clouddn.com/avatar.jpg" data-content="{{ post.summury }}" data-url="/post/{{ post.id }}">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      	
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+			<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-url="/post/{{ post.id }}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gagablog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+		</article>
+		
+		
+  	</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
