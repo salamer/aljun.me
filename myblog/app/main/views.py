@@ -116,7 +116,7 @@ def edit(index):
 	form.summury.data=post.summury
 	return render_template('edit.html',form=form)
 
-@main.route('/like')
+@main.route('/')
 def like():
 	like=Like.query.get_or_404(1)
 	like.like_count=int(like.like_count)+1
