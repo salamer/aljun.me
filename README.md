@@ -6,4 +6,4 @@
 
 地址
 
-[aljun.me](aljun.me)
+[http://aljun.me](http://aljun.me)
