@@ -4,6 +4,7 @@ $(document).ready(function(){
 			$(".share").css("display","none");
 		}
 		$(".article").fadeIn(1100);
+		$(".article img").addClass("img-responsive");
 		$("#signin_icon").click(function(){
 			var signin_width=Number($(window).width());
 			if(signin_width>600)
