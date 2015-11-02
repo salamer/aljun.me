@@ -48,32 +48,7 @@ def post(index):
 	post=Post.query.get_or_404(index)
 	return render_template("post.html",post=post)
 
-@main.route('/',methods=['GET','POST'])
-def write():
-	form=PostForm()
-	the_category=Category.query.all()
-	if form.validate_on_submit():
-		
-		category=Category.query.filter_by(tag=form.category.data).first()
-		if category is None:
-			category=Category(tag=form.category.data,count=1)
-		else:
-			category.count=int(category.count)+1
-		post=Post(
-			title=form.title.data,
-			body=form.body.data,
-			summury=form.summury.data,
-			category=category
-		)
-		
-		db.session.add(category)
-		db.session.add(post)
-		db.session.commit()
-		
-		flash("ok")
-		return redirect(url_for('.index'))
 
-	return render_template("write.html",form=form,the_category=the_category)
 
 
 
@@ -101,20 +76,6 @@ def about_website():
  #       flash('invalid usernamen or password')
 #    return render_template('login.html',form=form)
 
-@main.route('/',methods=['GET','POST'])
-def edit(index):
-	post=Post.query.get_or_404(index)
-	form=EditForm()
-	if form.validate_on_submit():
-		post.title=form.title.data
-		post.body=form.body.data
-		post.summury=form.summury.data
-		db.session.add(post)
-		return redirect(url_for('.index'))
-	form.title.data=post.title
-	form.body.data=post.body
-	form.summury.data=post.summury
-	return render_template('edit.html',form=form)
 
 @main.route('/')
 def like():
